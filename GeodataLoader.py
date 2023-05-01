@@ -12,6 +12,7 @@ import hashlib
 import pandas as pd
 from itertools import islice
 from torch.utils.data import Dataset
+from Chipset import Chipset, Chip
 
 """
 def batched(iterable, n):
