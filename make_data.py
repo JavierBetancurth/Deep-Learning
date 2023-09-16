@@ -39,7 +39,9 @@ def get_args():
     return parser.parse_args()
 
 
-def main(args):
+def main(args):                                                 
+    if not os.path.exists(args.data_folder_llp):  # Check if the destination folder exists, if not, create one.
+        os.makedirs(args.data_folder_llp)
     if args.dataset == "cifar10":
         train_dataset = torchvision.datasets.CIFAR10(root=args.data_folder_labeled, train=True, download=True)
         labels = train_dataset.targets
